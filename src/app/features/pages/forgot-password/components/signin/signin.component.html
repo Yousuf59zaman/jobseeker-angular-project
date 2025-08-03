@@ -1,0 +1,59 @@
+<form [formGroup]="signinForm">
+  <div class="py-[25px] px-[30px] sm:max-w-xl md:max-w-md mx-auto sm:rounded-xl bg-white">
+
+    <div class="mb-5">
+      <h2 class="text-[#2F64A3] text-2xl font-bold mb-1">Sign in</h2>
+      <p class="text-base text-[#595959]">Access all of Bdjobs Services</p>
+    </div>
+
+    <div class="max-w-xl mb-2">
+      <label for="input-label" class="block text-[16px] mb-2 ">Username/ Email Address/ Mobile Number</label>
+      <input type="email" id="input-label" formControlName="userCredential"
+        class="py-3 px-4 mb-2 block w-full border border-gray-300 rounded-xl text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none "
+        placeholder=""
+        [ngClass]="{'border-red-500': signinForm.get('userCredential')?.invalid}">
+        <div *ngIf="errorMessage" class="text-red-500 text-sm pb-4">
+          {{ errorMessage }}
+        </div>
+    </div>
+
+    <span class="text-[#2F64A3] text-sm font-normal">Forgot Username or Password?</span>
+
+    <div class="max-w-xl mt-[30px]">
+      <button type="button" (click)="onSubmit()"
+        class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-[#008020] text-white hover:bg-[#008020d4] focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none">
+        Submit
+      </button>
+    </div>
+
+      <div class="flex items-center justify-center my-[30px]">
+        <div class="border-t border-gray-300 flex-grow mr-3"></div>
+        <span class="text-gray-500">Or</span>
+        <div class="border-t border-gray-300 flex-grow ml-3"></div>
+      </div>
+
+    <div class="max-w-xl mb-5">
+      <a href="#"
+        class="w-full py-[10px] px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-gray-300">
+        <img src="images/google.svg" class="mr-2" alt="google photo">
+        <span class="text-sm font-medium">Sign in with Google</span>
+      </a>
+    </div>
+    <div class="max-w-xl pb-[16px]">
+      <a href="#"
+        class="w-full py-[10px] px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-gray-300">
+        <img src="images/linkedin.svg" class="mr-2" alt="google photo">
+        <span class="text-sm font-medium">Sign in with Linkedin</span>
+      </a>
+    </div>
+
+    <div class="text-center mb-[20px]">
+      <a class="text-base text-[16px] text-[#2F64A3]" href="https://mybdjobs.bdjobs.com/mybdjobs/signin.asp">Sign in to a
+        different account</a>
+    </div>
+    <div class="text-center">
+      <p>Don't have an account? <a class="text-base font-medium text-[#2F64A3]"
+          href="https://mybdjobs.bdjobs.com/createaccount.asp">Sign Up</a></p>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="136" height="40" viewBox="0 0 136 40">
+  <g id="appgallery" transform="translate(-7198 -363)">
+    <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(7198 363)" stroke="#7d7d7d" stroke-width="1">
+      <rect width="136" height="40" rx="4" stroke="none"/>
+      <rect x="0.5" y="0.5" width="135" height="39" rx="3.5" fill="none"/>
+    </g>
+    <g id="Huawei_AppGallery" transform="translate(7204.46 370.588)">
+      <rect id="rect817" width="24" height="24" rx="6" transform="translate(0.54 0.412)" fill="#c8102e"/>
+      <path id="path838" d="M18.278,5.589a.68.68,0,1,0,.684.68h0a.682.682,0,0,0-.684-.679Zm12.213,0a.68.68,0,1,0,.684.68h0a.682.682,0,0,0-.684-.679Z" transform="translate(-11.888 -3.608)" fill="#c73148"/>
+      <path id="path2" d="M12,7.524c-.237.013-.225.358-.225.358a6.791,6.791,0,0,0,6.331,3.7,6.844,6.844,0,0,0,6.349-3.715s.05-.467-.447-.305a6.778,6.778,0,0,1-11.8.014A.433.433,0,0,0,12,7.524Zm8.631,9.653-.725,2.161L19.2,17.178h-.689l1.113,3.141h.537l.727-2.063.726,2.063h.541l1.111-3.141H22.6l-.707,2.159-.725-2.161Zm-3.854,0-1.408,3.14h.662l.272-.608.019-.046h1.463l.287.654h.68L17.361,17.2l-.012-.018Zm10.195,0v3.138h.64V17.178Zm-18.342,0V20.32h.649V19.044h1.464V20.32h.649V17.178h-.649v1.268H9.283V17.178Zm5.762,0v1.8c0,.511-.258.784-.726.784s-.731-.28-.731-.805V17.181h-.648v1.8a1.257,1.257,0,0,0,1.37,1.391,1.274,1.274,0,0,0,1.383-1.417V17.179Zm9.4,0v3.138H26.2v-.572H24.431v-.778H25.61V18.4H24.431v-.643h1.712V17.18Zm-6.735.792.463,1.052.031.072h-.98l.031-.072Z" transform="translate(-5.642 -4.956)" fill="#fff"/>
+    </g>
+    <g id="Group_6299" data-name="Group 6299" transform="translate(0 1)">
+      <text id="EXPLORE_IT_ON" data-name="EXPLORE IT ON" transform="translate(7235 378)" fill="#fff" font-size="9" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="0" y="0">EXPLORE IT ON</tspan></text>
+      <text id="AppGallery-2" data-name="AppGallery" transform="translate(7235 393)" fill="#fff" font-size="15" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="0" y="0">AppGallery</tspan></text>
+    </g>
+  </g>
+</svg>

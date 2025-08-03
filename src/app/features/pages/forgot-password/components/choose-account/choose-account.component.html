@@ -1,0 +1,98 @@
+<form [formGroup]="chooseAccountForm">
+  <div class="py-[25px] px-[30px] sm:max-w-xl md:max-w-md mx-auto sm:rounded-xl bg-white">
+
+    <div class="mb-5">
+      <button type="button" (click)="goBack()" class="text-[#595959]">
+      <i class="icon-angle-left-long text-[12px] text-[#595959]"></i> Back
+      </button>
+    </div>
+
+    <div class="text-center flex flex-col items-center mb-4">
+      <img src="images/user-find.svg" class="max-h-24" alt="">
+      <h2 class="text-[#2F64A3] text-2xl font-bold mb-4">Choose Your Account</h2>
+    </div>
+
+    <div class="max-w-xl mb-4">
+      <div class="grid space-y-3">
+        <div *ngFor="let account of userAccountList; let i = index" class="relative flex items-start">
+
+          <!-- Google Account -->
+          <div *ngIf="account.socialMediaName === 'G' && account.userName === ''" class="flex items-start ">
+            <div class="flex items-center h-5 mt-1">
+              <input
+                id="hs-radio-{{ i }}"
+                name="selectedAccount"
+                type="radio"
+                class="border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 cursor-pointer"
+                [value]="account.encryptedUserId"
+                formControlName="selectedAccount"
+              >
+            </div>
+            <label for="hs-radio-{{ i }}" class="ms-3">
+              <span class="block text-base font-semibold text-gray-800">Name is {{ account.fullName }} & Sign in with Google</span>
+              <span id="hs-radio-{{ i }}-description" class="block text-[10px] text-black">
+                <span class="text-[#59595999]">Last login:</span> {{ account.lastLogIn }}
+              </span>
+            </label>
+          </div>
+
+          <!-- LinkedIn Account -->
+          <div *ngIf="account.socialMediaName === 'L' && account.userName === ''" class="flex items-start ">
+            <div class="flex items-center h-5 mt-1">
+              <input
+                id="hs-radio-{{ i }}"
+                name="selectedAccount"
+                type="radio"
+                class="border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 cursor-pointer"
+                [value]="account.encryptedUserId"
+                formControlName="selectedAccount"
+              >
+            </div>
+            <label for="hs-radio-{{ i }}" class="ms-3">
+              <span class="block text-base font-semibold text-gray-800">Name is {{ account.fullName }} & Sign in with LinkedIn</span>
+              <span id="hs-radio-{{ i }}-description" class="block text-[10px] text-black">
+                <span class="text-[#59595999]">Last login:</span> {{ account.lastLogIn }}
+              </span>
+            </label>
+          </div>
+
+          <!-- Default Account -->
+          <div *ngIf="account.userName !== ''" class="flex items-start ">
+            <div class="flex items-center h-5 mt-1">
+              <input
+                id="hs-radio-{{ i }}"
+                name="selectedAccount"
+                type="radio"
+                class="border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 cursor-pointer"
+                [value]="account.encryptedUserId"
+                formControlName="selectedAccount"
+              >
+            </div>
+            <label for="hs-radio-{{ i }}" class="ms-3">
+              <span class="block text-base font-semibold text-gray-800">Name is {{ account.fullName }} & Username is <span class="text-[#004db3]">{{ account.userName }}</span></span>
+              <span id="hs-radio-{{ i }}-description" class="block text-[10px] text-black">
+                <span *ngIf="account.lastLogIn !== ''" class="text-[#59595999]">Last login:</span> {{ account.lastLogIn }}
+              </span>
+            </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-xl my-[30px]">
+      <button type="button" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-[#008020] text-white hover:bg-[#008020d4] focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none" (click)="onContinue()"
+      [disabled]="chooseAccountForm.invalid">
+        Continue
+      </button>
+    </div>
+
+    <div class="text-center mb-[20px]">
+      <a class="text-base text-[16px] text-[#2F64A3]" href="https://mybdjobs.bdjobs.com/mybdjobs/signin.asp">Sign in to a different account</a>
+    </div>
+
+    <div class="text-center">
+      <p>Don't have an account? <a class="text-base font-medium text-[#2F64A3]" href="https://mybdjobs.bdjobs.com/createaccount.asp">Sign Up</a></p>
+    </div>
+  </div>
+</form>

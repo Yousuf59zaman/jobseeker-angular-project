@@ -1,0 +1,134 @@
+<div class="hidden lg:block bg-[#37474f]">
+
+  <div class="max-w-5xl container mx-auto  flex items-center justify-between">
+    <div class="flex items-center justify-center gap-2 text-[#bdbdbd]">
+      <a href="https://jobs.bdjobs.com/jobsearch.asp" target="_blank" class="p-[10px] text-[11px] hover:bg-[#2f64a3] hover:text-white">JOBS</a>
+      <a href="#" class="p-[10px] text-[11px] bg-[#008020] text-white">MY BDJOBS</a>
+      <a href="https://bdjobs.com/m_d_l/" target="_blank" class="p-[10px] text-[11px] hover:bg-[#ac016d] hover:text-white">E-LEARNING</a>
+      <a href="https://corporate3.bdjobs.com/" target="_blank"><img src="images/recuiter.svg" /></a>
+    </div>
+    <div class="flex items-center justify-evenly text-[#bdbdbd] text-[12px]">
+      <a href="https://www.youtube.com/mybdjobs" class="px-3 py-[9px] hover:bg-[#e52d27] hover:text-white"><i
+          class="icon-youtube"></i></a>
+      <a href="https://www.facebook.com/mybdjobs" class="px-3 py-[9px] hover:bg-[#3b5999] hover:text-white"><i
+          class="icon-facebook"></i></a>
+      <a href="https://b.bdjobs.com/google-post" class="px-3 py-[9px] hover:bg-[#dc4e41] hover:text-white"><i
+          class="icon-google-plus"></i></a>
+      <a href="https://www.linkedin.com/company/mybdjobs" class="px-3 py-[9px] hover:bg-[#0a66c2] hover:text-white"><i
+          class="icon-linkedin"></i></a>
+      <a rel="noopener" href="https://www.instagram.com/mybdjobs/"
+        class="px-3 py-[10px] hover:bg-[#833AB4] hover:text-white"><i class="icon-instagram"></i></a>
+
+
+      <div class="inline-flex rounded-lg shadow-sm pl-3">
+        <button (click)="selectLanguage('ENG')" [ngClass]="{
+             'bg-white text-[#263238] border-gray-200': eng,
+             'bg-[#37474f] text-white': !eng,
+           }" class=" py-[0] px-2 inline-flex justify-center items-center gap-2 -ms-px first:ms-0
+          text-[10px] font-semibold border border-gray-200 shadow-sm
+          hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50">
+          ENG
+        </button>
+        <button (click)="selectLanguage('BAN')" [ngClass]="{
+             'bg-[#37474f] text-white': !ban,
+             'bg-white text-[#263238] border-gray-200':ban
+           }" class="py-0 px-2 inline-flex justify-center items-center gap-2 -ms-px first:ms-0 text-[26px] font-medium focus:z-10
+          border border-gray-200 bg-[#37474f] text-white shadow-sm
+          hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 ">
+          <i class="icon-bn"></i>
+        </button>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 2nd header  -->
+
+<div class=" bg-white shadow-lg shadow-[#00000040] relative z-[9999] sm:static ">
+
+  <div class="max-w-5xl container mx-auto  flex items-center justify-between ">
+
+    <div class="px-1 py-0 flex items-center justify-center gap-2 text-[#424242]">
+
+      <a href="https://bdjobs.com/default.asp" class="ml-6 lg:ml-0">
+        <img class="h-[50px] w-auto py-[10px] lg:py-0 lg:h-auto  lg:max-w-[164px]" src="images/bdjobsLogo.svg" alt="Logo of bdjobs.com"
+          title="bdjobs.com logo">
+      </a>
+
+    </div>
+
+    <div class="hidden lg:flex items-center justify-evenly text-[#424242] text-[13px]">
+
+      <a href="https://mybdjobs.bdjobs.com/mybdjobs/package-info.asp"
+        class="relative py-6 pl-[18px] pr-6 hover:bg-[#f5f5f5] hover:text-[#008020]">
+        <img class="" src="images/BdjobsPro.svg" alt="Bdjobs Pro">
+        <span
+          class="absolute top-0 right-0 transform translate-x-[0%] translate-y-[32%] z-[9999] text-[10px] text-[#B3003C] border border-[#B3003C] rounded-full py-0 px-2">
+          new
+        </span>
+      </a>
+
+
+      <div class="hs-dropdown relative inline-flex hover:bg-[#f5f5f5] hover:text-[#008020]">
+        <button id="hs-dropdown-with-dividers" type="button"
+          class="hs-dropdown-toggle py-5 px-4 inline-flex items-center gap-x-2" aria-haspopup="menu"
+          aria-expanded="false" aria-label="Dropdown">
+          Quick Links
+          <svg class="hs-dropdown-open:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
+
+        <div
+          class="hs-dropdown-menu -inset-y-2 transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-40 bg-white shadow-md mt-2 divide-y divide-gray-200"
+          role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-with-dividers">
+          <div class="py-2 first:pt-0 last:pb-0">
+            <a class="flex items-center gap-x-3.5 py-[6px] px-5 rounded-lg text-[12px] text-[#777] hover:bg-[#f5f5f5] hover:text-[#008020] focus:outline-none focus:bg-gray-100"
+              href="https://jobs.bdjobs.com/OtherJobs.asp?JobType=new">
+              New Jobs
+            </a>
+            <a class="flex items-center gap-x-3.5 py-[6px] px-5 rounded-lg text-[12px] text-[#777] hover:bg-[#f5f5f5] hover:text-[#008020] focus:outline-none focus:bg-gray-100"
+              href="https://jobs.bdjobs.com/OtherJobs.asp?JobType=deadline">
+              Deadline Tomorrow
+            </a>
+            <a class="flex items-center gap-x-3.5 py-[6px] px-5 rounded-lg text-[12px] text-[#777] hover:bg-[#f5f5f5] hover:text-[#008020] focus:outline-none focus:bg-gray-100"
+              href="https://jobs.bdjobs.com/OtherJobs.asp?JobType=parttime">
+              Part Time
+            </a>
+            <a class="flex items-center gap-x-3.5 py-[6px] px-5 rounded-lg text-[12px] text-[#777] hover:bg-[#f5f5f5] hover:text-[#008020] focus:outline-none focus:bg-gray-100"
+              href="https://jobs.bdjobs.com/OtherJobs.asp?JobType=contract">
+              Contructual
+            </a>
+            <a class="flex items-center gap-x-3.5 py-[6px] px-5 rounded-lg text-[12px] text-[#777] hover:bg-[#f5f5f5] hover:text-[#008020] focus:outline-none focus:bg-gray-100"
+              href="https://jobs.bdjobs.com/OtherJobs.asp?JobType=government">
+              Government
+            </a>
+            <a class="flex items-center gap-x-3.5 py-[6px] px-5 rounded-lg text-[12px] text-[#777] hover:bg-[#f5f5f5] hover:text-[#008020] focus:outline-none focus:bg-gray-100"
+              href="https://jobs.bdjobs.com/locationwisejobs.asp">
+              Location Wise
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://jobs.bdjobs.com/Company_list.asp"
+        class="py-5 px-4 hover:bg-[#f5f5f5] hover:text-[#008020]">Employer List</a>
+
+      <a href="https://bdjobs.com/career/careercouncil/CareerCounsellingCategory.asp"
+        class="py-5 px-4 hover:bg-[#f5f5f5] hover:text-[#008020]"> Career
+        Counseling</a>
+      <a href="https://mybdjobs.bdjobs.com/mybdjobs/faq.asp"
+        class="py-5 px-4 hover:bg-[#f5f5f5] hover:text-[#008020]">FAQ</a>
+    </div>
+
+  </div>
+
+</div>

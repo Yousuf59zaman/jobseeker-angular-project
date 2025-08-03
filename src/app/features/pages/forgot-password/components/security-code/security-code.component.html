@@ -1,0 +1,70 @@
+<form [formGroup]="securityCodeForm" (ngSubmit)="onSubmit()">
+  <!-- <pre>{{ securityCodeForm.value | json }}</pre> -->
+
+  <div class="py-[25px] px-[30px] sm:max-w-xl md:max-w-md mx-auto sm:rounded-xl bg-white">
+
+    <div class="mb-5">
+      <button type="button" (click)="goBack()" class="text-[#595959]">
+      <i class="icon-angle-left-long text-[12px] text-[#595959]"></i> Back
+      </button>
+    </div>
+
+    <div class="text-center flex flex-col items-center mb-5">
+      <img src="images/user-find.svg" class="max-h-16 my-[20px]" alt="">
+      <h2 class="text-[#2F64A3] text-2xl font-bold mb-[10px]">Enter Security Code</h2>
+      <p class="text-base">Please check your phone or a text message with your code.<br>
+        Your code is <b> 6 characters</b> in length.</p>
+    </div>
+    <div class="max-w-xl mb-[20px] text-center">
+      <span *ngIf="resetDetails?.requestType === 'Mobile'" class=" text-[14px]">We sent your code to: +880
+        1{{selectedUserAccountList.phone}}</span>
+      <span *ngIf="resetDetails?.requestType === 'Email'" class=" text-[14px]">We sent your code to:
+        {{selectedUserAccountList.email}}</span>
+      <input type="email" id="input-label" formControlName="otp"
+      class="py-4 px-[20px] block w-full mt-2 border border-[#D1C7CD] rounded-[12px] text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none "
+      placeholder="Enter code"
+      (keypress)="validateNumber($event)" 
+      maxlength="6" 
+      [ngClass]="{'border-red-500': securityCodeForm.get('otp')?.invalid && securityCodeForm.get('otp')?.dirty}">
+      <div *ngIf="showTimer" class="text-left">
+        <span class="font-medium text-xs mt-2">Time remaining: {{ countdownTime }} seconds</span>
+      </div>
+
+      <div *ngIf="securityCodeForm.get('otp')?.dirty && securityCodeForm.get('otp')?.invalid" class="text-red-500 text-left">
+        Please type the code.
+      </div>
+
+      <div *ngIf="errorMessage" class="text-red-500 text-left">
+        {{ errorMessage }}
+      </div>
+    </div>
+
+
+    <div class="text-center text-sm mb-[30px]">
+      <p>Didn’t receive a code? <button type="button" class="text-sm font-medium text-[#2F64A3]" (click)="ResendOTP()"
+          [disabled]="isResendDisabled">Try again.</button></p>
+    </div>
+
+    <div class="max-w-xl pb-[16px] flex justify-center gap-4">
+      <button type="button" (click)="cancel()"
+        class="py-[10px] flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-[#D1C7CD] text-[#757575] hover: focus:outline-1 focus:text-[#2F64A3] focus:border-[#2F64A3] disabled:opacity-50 disabled:pointer-events-none">
+        Cancel
+      </button>
+      <button type="button" (click)="onSubmit()"
+        class="py-[10px]  flex-1 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-[#008020] text-white hover:bg-[#008020d4] focus:outline-none focus:bg-green-700 disabled:opacity-50 disabled:pointer-events-none"
+        [disabled]="securityCodeForm.invalid">
+        Continue
+      </button>
+    </div>
+
+    <div class="text-center mb-[20px]">
+      <a class="text-base text-[#2F64A3]" href="https://mybdjobs.bdjobs.com/mybdjobs/signin.asp">Sign in to a
+        different account</a>
+    </div>
+    <div class="text-center text-base">
+      <p class="text-center text-base">Don't have an account? <a class="text-base font-medium text-[#2F64A3]"
+          href="https://mybdjobs.bdjobs.com/createaccount.asp">Sign Up</a></p>
+    </div>
+
+  </div>
+</form>
