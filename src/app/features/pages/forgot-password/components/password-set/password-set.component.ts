@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { 
+import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators
- } from '@angular/forms';
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ForgetPasswordService } from '../../../../../shared/service/forget-password.service';
 import { ResetDetails } from '../../../../../shared/interfaces/reset-details';
@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
   styleUrl: './password-set.component.scss'
 })
 
-export class PasswordSetComponent implements OnInit{
+export class PasswordSetComponent implements OnInit {
 
   selectedUserAccountList: any = null;
   resetDetails: ResetDetails | any = null;
@@ -33,25 +33,25 @@ export class PasswordSetComponent implements OnInit{
   ) {
     this.passwordSetForm = this.fb.group({
       password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(/^[^*'\-|{}\[\]\/\\;:<>"?~!^,\s]+$/)]],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', [Validators.required, Validators.pattern(/^[^*'\-|{}\[\]\/\\;:<>"?~!^,\s]+$/)]]
     });
   }
 
   ngOnInit(): void {
 
     this.forgetPasswordService.getSelectedAccount().subscribe(data => {
-        this.selectedUserAccountList = data;
-        // console.log('Received data in Enter OTP:', this.selectedUserAccountList);
-      });
-        
-      this.forgetPasswordService.getResetDetails().subscribe(details => {
-        this.resetDetails = details;
-        // console.log('Received reset details:', this.resetDetails);
-      });
-      
-      this.passwordSetForm.valueChanges.subscribe(() => {
-        this.checkPasswordMatch();
-      });
+      this.selectedUserAccountList = data;
+      // console.log('Received data in Enter OTP:', this.selectedUserAccountList);
+    });
+
+    this.forgetPasswordService.getResetDetails().subscribe(details => {
+      this.resetDetails = details;
+      // console.log('Received reset details:', this.resetDetails);
+    });
+
+    this.passwordSetForm.valueChanges.subscribe(() => {
+      this.checkPasswordMatch();
+    });
   }
 
   onSubmit() {
@@ -67,14 +67,14 @@ export class PasswordSetComponent implements OnInit{
       this.errorMessage = 'Password minimum 8 characters.';
       return;
     }
-    
-    if (this.passwordSetForm.get('password')?.invalid) {
-      this.errorMessage = 'Password does not allow ", \', %, &, (, ), <, > or space.';
+
+    if (this.passwordSetForm.get('password')?.invalid || this.passwordSetForm.get('confirmPassword')?.invalid) {
+      this.errorMessage = 'Password does not allow *, \', -, |, {, }, [, ], /, \\, ;, :, <, >, ", ?, ~, !, ^, , or space.';
       return;
     }
 
     if (this.errorMessage) {
-          return;
+      return;
     }
     this.forgetPasswordService.setPassword(
       this.resetDetails.userName,
@@ -97,7 +97,7 @@ export class PasswordSetComponent implements OnInit{
     this.router.navigate(['enterOTP'], {});
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['findAccount'], {});
   }
 
@@ -107,7 +107,7 @@ export class PasswordSetComponent implements OnInit{
     const confirmPassword = this.passwordSetForm.get('confirmPassword')?.value;
 
     if (!password || !confirmPassword) {
-      this.errorMessage = null; 
+      this.errorMessage = null;
       return;
     }
 
@@ -121,10 +121,10 @@ export class PasswordSetComponent implements OnInit{
     if (confirmPassword.length > password.length) {
       this.errorMessage = 'These passwords do not match.';
     } else {
-      this.errorMessage = null; 
+      this.errorMessage = null;
     }
   }
-  
+
 
 
   barClass: string[] = ['bg-[#F7F8FB]', 'bg-[#F7F8FB]', 'bg-[#F7F8FB]', 'bg-[#F7F8FB]', 'bg-[#F7F8FB]'];
@@ -156,16 +156,16 @@ export class PasswordSetComponent implements OnInit{
 
     if (strength == 1) {
       this.barClass = ['bg-red-500', 'bg - [#F7F8FB]', 'bg - [#F7F8FB]', 'bg - [#F7F8FB]', 'bg - [#F7F8FB]'];
-    } else if (strength == 2 ) {
+    } else if (strength == 2) {
       this.barClass = ['bg-red-500', 'bg-red-500', 'bg - [#F7F8FB]', 'bg - [#F7F8FB]', 'bg - [#F7F8FB]'];
     } else if (strength == 3) {
       this.barClass = ['bg-orange-500', 'bg-orange-500', 'bg-orange-500', 'bg - [#F7F8FB]', 'bg - [#F7F8FB]'];
-    } else if (strength ==4 ) {
+    } else if (strength == 4) {
       this.barClass = ['bg-orange-500', 'bg-orange-500', 'bg-orange-500', 'bg-orange-500', 'bg - [#F7F8FB]'];
     } else if (strength == 5) {
       this.barClass = ['bg-green-500', 'bg-green-500', 'bg-green-500', 'bg-green-500', 'bg-green-500'];
     }
 
   }
-  
+
 }
